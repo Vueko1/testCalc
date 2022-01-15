@@ -1,0 +1,190 @@
+
+
+// basic resets
+
+html{
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+// typography 
+
+body {
+    font-family: 'Spartan';
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+main {
+    font-size: 32px;
+}
+
+.theme, .bttn-reset, .bttn-del {
+    text-transform: uppercase;
+}
+
+.bttn-reset, .bttn-del {
+    font-size: 18px;    
+}
+
+.theme {
+    font-size: 12px;
+}
+
+// themes 
+
+    // t1
+
+    .theme-one {
+        background-color:hsl(222, 26%, 31%) ;
+        .app-wrapper{
+            background-color: hsl(222, 26%, 31%);
+        }
+        main {
+            color: hsl(221, 14%, 31%);
+            background-color: hsl(222, 26%, 31%);
+        }
+        header, .output, .bttn-del, .bttn-reset, .bttn-equals{
+            color: white;
+        }
+        .calc-bttn{
+            background-color: hsl(30, 25%, 89%);
+            border-radius: 5px ;
+            box-shadow: 0px 5px 0px 0px hsl(28, 16%, 65%);
+            &:active {
+                background-color: hsl(28, 16%, 65%);
+                box-shadow: 0px 5px 0px 0px hsl(28, 16%, 40%);
+            }
+        }
+        .bttn-del, .bttn-reset{
+            background-color: hsl(225, 21%, 49%);
+            box-shadow: 0px 5px 0px 0px hsl(224, 28%, 35%);
+            &:active {
+                background-color: hsl(224, 28%, 35%);
+                box-shadow: 0px 5px 0px 0px hsl(224, 28%, 29%);
+            }
+        }
+        .bttn-equals{
+            background-color: hsl(6, 63%, 50%);
+            box-shadow: 0px 5px 0px 0px hsl(6, 70%, 34%);
+            &:active {
+                background-color: hsl(6, 70%, 34%);
+                box-shadow: 0px 5px 0px 0px hsl(6, 70%, 29%);
+            }
+        }
+        .output {
+            background-color: hsl(224, 36%, 15%);
+        }
+        .grid-wrapper {
+            background-color: hsl(223, 31%, 20%);
+        }
+
+    }
+
+
+// components
+.calc-bttn{
+    cursor: pointer;
+}
+.numbers {
+    width: 60px;
+    display: block;
+    letter-spacing: 4.4px;
+    font-size: 10px;
+    text-indent: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: hsl(6, 63%, 50%);
+    border-radius: 50%;
+    display: block;
+  }
+
+.dot-box {
+    width: 60px;
+    background-color: hsl(223, 31%, 20%);
+    padding: 3px;
+    border-radius: 10px;
+}
+
+// layout
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.app-wrapper {
+    width: max-content;
+    padding: 10px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.output {
+    min-height: 75px;
+    width: 100%;
+}
+
+.grid-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 14px;
+    padding: 20px;
+    max-width: 360px;
+    .bttn-reset{
+        grid-column: 1 / 3;
+    }
+    .bttn-equals{
+        grid-column: 3 / 5;
+    }
+    & > * {
+        min-height: 60px;
+        min-width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.themes {
+    display: flex;
+    flex-direction: row;
+    .theme {
+        align-self: flex-end;
+        padding-bottom: 7px;
+        padding-right: 10px;
+    }
+}
