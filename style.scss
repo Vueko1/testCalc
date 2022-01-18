@@ -1,5 +1,4 @@
 
-
 // basic resets
 
 html{
@@ -26,6 +25,7 @@ body {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    transition: 0.3s;
 }
 
 main {
@@ -48,52 +48,76 @@ main {
 
     // t1
 
-    .theme-one {
-        background-color:hsl(222, 26%, 31%) ;
-        .app-wrapper{
-            background-color: hsl(222, 26%, 31%);
-        }
-        main {
-            color: hsl(221, 14%, 31%);
-            background-color: hsl(222, 26%, 31%);
-        }
-        header, .output, .bttn-del, .bttn-reset, .bttn-equals{
-            color: white;
-        }
-        .calc-bttn{
-            background-color: hsl(30, 25%, 89%);
-            border-radius: 5px ;
-            box-shadow: 0px 5px 0px 0px hsl(28, 16%, 65%);
-            &:active {
-                background-color: hsl(28, 16%, 65%);
-                box-shadow: 0px 5px 0px 0px hsl(28, 16%, 40%);
+   
+    @mixin themeColor($themeBg, $keypadBg, $outputBg, $keyBg, $keyBgPress, $keyShadowPress,
+     $eqBg, $eqBgPress, $eqShadowPress, $specBg, $specBgPress, $specShadowPress, $fontCol, $specFont) {
+        
+        .theme-one {
+            background-color: $themeBg ;
+            main {
+                color: $fontCol;
             }
-        }
-        .bttn-del, .bttn-reset{
-            background-color: hsl(225, 21%, 49%);
-            box-shadow: 0px 5px 0px 0px hsl(224, 28%, 35%);
-            &:active {
-                background-color: hsl(224, 28%, 35%);
-                box-shadow: 0px 5px 0px 0px hsl(224, 28%, 29%);
+            header, .output, .bttn-del, .bttn-reset, .bttn-equals{
+                color: $specFont;
             }
-        }
-        .bttn-equals{
-            background-color: hsl(6, 63%, 50%);
-            box-shadow: 0px 5px 0px 0px hsl(6, 70%, 34%);
-            &:active {
-                background-color: hsl(6, 70%, 34%);
-                box-shadow: 0px 5px 0px 0px hsl(6, 70%, 29%);
+            .calc-bttn{
+                background-color: $keyBg;
+                border-radius: 5px ;
+                box-shadow: 0px 5px 0px 0px $keyBgPress;
+                &:active {
+                    background-color: $keyBgPress;
+                    box-shadow: 0px 5px 0px 0px $keyShadowPress;
+                }
             }
+            .bttn-del, .bttn-reset{
+                background-color: $specBg;
+                box-shadow: 0px 5px 0px 0px $specBgPress;
+                &:active {
+                    background-color: $specBgPress;
+                    box-shadow: 0px 5px 0px 0px $specShadowPress;
+                }
+            }
+            .bttn-equals{
+                background-color: $eqBg;
+                box-shadow: 0px 5px 0px 0px $eqBgPress;
+                &:active {
+                    background-color: $eqBgPress;
+                    box-shadow: 0px 5px 0px 0px $eqShadowPress;
+                }
+            }
+            .output {
+                background-color: $outputBg;
+            }
+            .grid-wrapper {
+                background-color: $keypadBg;
+            }
+    
         }
-        .output {
-            background-color: hsl(224, 36%, 15%);
-        }
-        .grid-wrapper {
-            background-color: hsl(223, 31%, 20%);
-        }
+    }   
 
+html[data-theme="one"]{
+    @include themeColor(hsl(222, 26%, 31%),hsl(223, 31%, 20%),hsl(224, 36%, 15%),
+    hsl(30, 25%, 89%),hsl(28, 16%, 65%),hsl(28, 16%, 40%),hsl(6, 63%, 50%),
+    hsl(6, 70%, 34%),hsl(6, 70%, 29%),hsl(225, 21%, 49%),hsl(224, 28%, 35%),
+    hsl(224, 28%, 29%),hsl(221, 14%, 31%), white);
+}
+
+html[data-theme="two"]{
+    @include themeColor(hsl(0, 0%, 90%),hsl(0, 5%, 81%),hsl(0, 0%, 93%),
+    hsl(45, 7%, 89%),hsl(35, 11%, 61%),hsl(35, 11%, 52%),hsl(185, 42%, 37%),
+    hsl(185, 58%, 25%),hsl(185, 58%, 20%),hsl(25, 98%, 40%),hsl(25, 99%, 27%),
+    hsl(25, 99%, 20%),hsl(60, 10%, 19%), hsl(60, 10%, 19%));
+}
+
+html[data-theme="three"]{
+    @include themeColor(hsl(268, 75%, 9%),hsl(268, 71%, 12%),hsl(268, 71%, 12%),
+    hsl(268, 47%, 21%),hsl(290, 70%, 36%),hsl(290, 70%, 44%),hsl(176, 100%, 44%),
+    hsl(177, 92%, 70%),hsl(177, 92%, 78%),hsl(281, 89%, 26%),hsl(285, 91%, 52%),
+    hsl(285, 91%, 60%),hsl(52, 100%, 62%), white);
+    .dot {
+        background-color: hsl(177, 92%, 70%);
     }
-
+}
 
 // components
 .calc-bttn{
@@ -113,6 +137,14 @@ main {
     background-color: hsl(6, 63%, 50%);
     border-radius: 50%;
     display: block;
+  }
+
+.dotTwo {
+      left: 19px;
+  }
+
+.dotThree {
+      left: 38px;
   }
 
 .dot-box {
@@ -164,7 +196,6 @@ main {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 14px;
     padding: 20px;
-    max-width: 360px;
     .bttn-reset{
         grid-column: 1 / 3;
     }

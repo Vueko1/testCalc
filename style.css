@@ -21,7 +21,8 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 main {
@@ -40,66 +41,179 @@ main {
   font-size: 12px;
 }
 
-.theme-one {
+html[data-theme="one"] .theme-one {
   background-color: #3a4764;
 }
 
-.theme-one .app-wrapper {
-  background-color: #3a4764;
-}
-
-.theme-one main {
+html[data-theme="one"] .theme-one main {
   color: #444b5a;
-  background-color: #3a4764;
 }
 
-.theme-one header, .theme-one .output, .theme-one .bttn-del, .theme-one .bttn-reset, .theme-one .bttn-equals {
+html[data-theme="one"] .theme-one header, html[data-theme="one"] .theme-one .output, html[data-theme="one"] .theme-one .bttn-del, html[data-theme="one"] .theme-one .bttn-reset, html[data-theme="one"] .theme-one .bttn-equals {
   color: white;
 }
 
-.theme-one .calc-bttn {
+html[data-theme="one"] .theme-one .calc-bttn {
   background-color: #eae3dc;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 0px 0px #b4a597;
           box-shadow: 0px 5px 0px 0px #b4a597;
 }
 
-.theme-one .calc-bttn:active {
+html[data-theme="one"] .theme-one .calc-bttn:active {
   background-color: #b4a597;
   -webkit-box-shadow: 0px 5px 0px 0px #766556;
           box-shadow: 0px 5px 0px 0px #766556;
 }
 
-.theme-one .bttn-del, .theme-one .bttn-reset {
+html[data-theme="one"] .theme-one .bttn-del, html[data-theme="one"] .theme-one .bttn-reset {
   background-color: #637097;
   -webkit-box-shadow: 0px 5px 0px 0px #404e72;
           box-shadow: 0px 5px 0px 0px #404e72;
 }
 
-.theme-one .bttn-del:active, .theme-one .bttn-reset:active {
+html[data-theme="one"] .theme-one .bttn-del:active, html[data-theme="one"] .theme-one .bttn-reset:active {
   background-color: #404e72;
   -webkit-box-shadow: 0px 5px 0px 0px #35405f;
           box-shadow: 0px 5px 0px 0px #35405f;
 }
 
-.theme-one .bttn-equals {
+html[data-theme="one"] .theme-one .bttn-equals {
   background-color: #d03f2f;
   -webkit-box-shadow: 0px 5px 0px 0px #93261a;
           box-shadow: 0px 5px 0px 0px #93261a;
 }
 
-.theme-one .bttn-equals:active {
+html[data-theme="one"] .theme-one .bttn-equals:active {
   background-color: #93261a;
   -webkit-box-shadow: 0px 5px 0px 0px #7e2116;
           box-shadow: 0px 5px 0px 0px #7e2116;
 }
 
-.theme-one .output {
+html[data-theme="one"] .theme-one .output {
   background-color: #182034;
 }
 
-.theme-one .grid-wrapper {
+html[data-theme="one"] .theme-one .grid-wrapper {
   background-color: #232c43;
+}
+
+html[data-theme="two"] .theme-one {
+  background-color: #e6e6e6;
+}
+
+html[data-theme="two"] .theme-one main {
+  color: #35352c;
+}
+
+html[data-theme="two"] .theme-one header, html[data-theme="two"] .theme-one .output, html[data-theme="two"] .theme-one .bttn-del, html[data-theme="two"] .theme-one .bttn-reset, html[data-theme="two"] .theme-one .bttn-equals {
+  color: #35352c;
+}
+
+html[data-theme="two"] .theme-one .calc-bttn {
+  background-color: #e5e4e1;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 0px 0px #a69d91;
+          box-shadow: 0px 5px 0px 0px #a69d91;
+}
+
+html[data-theme="two"] .theme-one .calc-bttn:active {
+  background-color: #a69d91;
+  -webkit-box-shadow: 0px 5px 0px 0px #928777;
+          box-shadow: 0px 5px 0px 0px #928777;
+}
+
+html[data-theme="two"] .theme-one .bttn-del, html[data-theme="two"] .theme-one .bttn-reset {
+  background-color: #ca5502;
+  -webkit-box-shadow: 0px 5px 0px 0px #893901;
+          box-shadow: 0px 5px 0px 0px #893901;
+}
+
+html[data-theme="two"] .theme-one .bttn-del:active, html[data-theme="two"] .theme-one .bttn-reset:active {
+  background-color: #893901;
+  -webkit-box-shadow: 0px 5px 0px 0px #652b01;
+          box-shadow: 0px 5px 0px 0px #652b01;
+}
+
+html[data-theme="two"] .theme-one .bttn-equals {
+  background-color: #377f86;
+  -webkit-box-shadow: 0px 5px 0px 0px #1b5f65;
+          box-shadow: 0px 5px 0px 0px #1b5f65;
+}
+
+html[data-theme="two"] .theme-one .bttn-equals:active {
+  background-color: #1b5f65;
+  -webkit-box-shadow: 0px 5px 0px 0px #154c51;
+          box-shadow: 0px 5px 0px 0px #154c51;
+}
+
+html[data-theme="two"] .theme-one .output {
+  background-color: #ededed;
+}
+
+html[data-theme="two"] .theme-one .grid-wrapper {
+  background-color: #d1cccc;
+}
+
+html[data-theme="three"] .theme-one {
+  background-color: #160628;
+}
+
+html[data-theme="three"] .theme-one main {
+  color: #ffe53d;
+}
+
+html[data-theme="three"] .theme-one header, html[data-theme="three"] .theme-one .output, html[data-theme="three"] .theme-one .bttn-del, html[data-theme="three"] .theme-one .bttn-reset, html[data-theme="three"] .theme-one .bttn-equals {
+  color: white;
+}
+
+html[data-theme="three"] .theme-one .calc-bttn {
+  background-color: #341c4f;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 0px 0px #871c9c;
+          box-shadow: 0px 5px 0px 0px #871c9c;
+}
+
+html[data-theme="three"] .theme-one .calc-bttn:active {
+  background-color: #871c9c;
+  -webkit-box-shadow: 0px 5px 0px 0px #a522bf;
+          box-shadow: 0px 5px 0px 0px #a522bf;
+}
+
+html[data-theme="three"] .theme-one .bttn-del, html[data-theme="three"] .theme-one .bttn-reset {
+  background-color: #58077d;
+  -webkit-box-shadow: 0px 5px 0px 0px #bc15f4;
+          box-shadow: 0px 5px 0px 0px #bc15f4;
+}
+
+html[data-theme="three"] .theme-one .bttn-del:active, html[data-theme="three"] .theme-one .bttn-reset:active {
+  background-color: #bc15f4;
+  -webkit-box-shadow: 0px 5px 0px 0px #c73cf6;
+          box-shadow: 0px 5px 0px 0px #c73cf6;
+}
+
+html[data-theme="three"] .theme-one .bttn-equals {
+  background-color: #00e0d1;
+  -webkit-box-shadow: 0px 5px 0px 0px #6cf9f2;
+          box-shadow: 0px 5px 0px 0px #6cf9f2;
+}
+
+html[data-theme="three"] .theme-one .bttn-equals:active {
+  background-color: #6cf9f2;
+  -webkit-box-shadow: 0px 5px 0px 0px #93fbf5;
+          box-shadow: 0px 5px 0px 0px #93fbf5;
+}
+
+html[data-theme="three"] .theme-one .output {
+  background-color: #1d0934;
+}
+
+html[data-theme="three"] .theme-one .grid-wrapper {
+  background-color: #1d0934;
+}
+
+html[data-theme="three"] .dot {
+  background-color: #6cf9f2;
 }
 
 .calc-bttn {
@@ -120,6 +234,14 @@ main {
   background-color: #d03f2f;
   border-radius: 50%;
   display: block;
+}
+
+.dotTwo {
+  left: 19px;
+}
+
+.dotThree {
+  left: 38px;
 }
 
 .dot-box {
@@ -210,7 +332,6 @@ main {
       grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 14px;
   padding: 20px;
-  max-width: 360px;
 }
 
 .grid-wrapper .bttn-reset {
