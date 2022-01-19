@@ -44,6 +44,15 @@ main {
     font-size: 12px;
 }
 
+.output {
+    text-align: right;
+    unicode-bidi: plaintext; // that was pain in the...
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    padding-right: 10px;
+}
+
 // themes 
 
     // t1
@@ -168,7 +177,6 @@ header {
     width: 100%;
 }
 .app-wrapper {
-    width: max-content;
     padding: 10px;
     height: max-content;
     display: flex;
@@ -176,8 +184,11 @@ header {
     justify-content: center;
     align-items: center;
     gap: 1em;
+    flex-grow: 1;
+    max-width: 500px;
 }
 main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -218,4 +229,8 @@ main {
         padding-bottom: 7px;
         padding-right: 10px;
     }
+}
+
+.output, .grid-wrapper {
+    border-radius: 10px;
 }
