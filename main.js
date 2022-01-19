@@ -21,8 +21,12 @@ let wasDone = false;
 
 signArray.forEach(e => {
     e.addEventListener('click', () => {
-        currentSign = e.innerText;
-        outputArea.innerText = "";
+        if(currentSign == "") {
+            currentSign = e.innerText;
+            outputArea.innerText = "";
+        } else if(numberTwo == null && currentSign != ""){
+            currentSign = e.innerText;
+        } 
     })
 })
 
