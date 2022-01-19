@@ -21,12 +21,18 @@ let wasDone = false;
 
 signArray.forEach(e => {
     e.addEventListener('click', () => {
-        if(currentSign == "") {
+        if(currentSign == "" && numberOne != null && numberOne != "-") {
             currentSign = e.innerText;
             outputArea.innerText = "";
+        } else if(e.innerText == "-" && numberOne == null) {
+            outputArea.innerText = "-";
+            numberOne = "-";
+        } else if(e.innerText == "-" && numberTwo == null && currentSign != "") {
+            outputArea.innerText = "-";
+            numberTwo = "-";
         } else if(numberTwo == null && currentSign != ""){
             currentSign = e.innerText;
-        } 
+        }
     })
 })
 
@@ -112,7 +118,7 @@ calcArray.forEach(e => {
 })
 
 equalsSign.addEventListener('click', () => {
-    if(numberOne != null && numberTwo != null)
+    if(numberOne != null && numberTwo != null && numberTwo != "-")
     {
     if(numberOne.charAt(numberOne.length - 1) == "."){
         numberOne = numberOne.slice(0, -1);
@@ -141,7 +147,16 @@ equalsSign.addEventListener('click', () => {
             };
             break;
 
-            case "/": outputArea.innerText = Number(numberOne) / Number(numberTwo);
+            case "/": { 
+                if (numberTwo == "0"){
+                    outputArea.textContent = "dont / by 0"
+                } else {
+                    outputArea.innerText = Number(numberOne) / Number(numberTwo);
+                }
+                if (numberTwo != 0 && outputArea.innerText.length > 12){
+                    outputArea.innerText = Math.round(((Number(numberOne) / Number(numberTwo)) + Number.EPSILON) * 100) / 100;
+                }
+            }
             break;
         }
         wasDone = true;
