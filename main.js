@@ -85,7 +85,7 @@ numberArray.forEach(p => {
             if(p.innerText == 0 && (numberTwo == "0" || numberTwo == "-0")){}
             else {
             outputArea.innerText += p.innerText;
-            numberTne = outputArea.innerText;
+            numberTwo = outputArea.innerText;
             }
         }
     })
