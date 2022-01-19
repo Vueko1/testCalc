@@ -76,11 +76,17 @@ window.addEventListener('keydown', (e) => {
 numberArray.forEach(p => {
     p.addEventListener('click', () => {
         if(currentSign == "" && reg.test(p.innerText) == true && outputArea.innerText.length < 12){
+            if(p.innerText == 0 && (numberOne == "0" || numberOne == "-0")){}
+            else {
             outputArea.innerText += p.innerText;
             numberOne = outputArea.innerText;
+            }
         } else if (currentSign != "" && reg.test(p.innerText) == true && outputArea.innerText.length < 12){
+            if(p.innerText == 0 && (numberTwo == "0" || numberTwo == "-0")){}
+            else {
             outputArea.innerText += p.innerText;
-            numberTwo = outputArea.innerText;
+            numberTne = outputArea.innerText;
+            }
         }
     })
 })
